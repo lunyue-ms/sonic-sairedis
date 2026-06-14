@@ -1,5 +1,5 @@
 [submodule "SAI"]
 	path = SAI
-	url = git@github.com:lunyue-ms/SAI.git
+	url = https://github.com/lunyue-ms/SAI.git
 	ignore = dirty
 	branch = bazel-port-overlay

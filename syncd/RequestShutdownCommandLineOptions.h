@@ -2,6 +2,7 @@
 
 #include "swss/sal.h"
 
+#include <cstdint>
 #include <string>
 
 namespace syncd

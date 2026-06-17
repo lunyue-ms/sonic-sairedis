@@ -162,7 +162,11 @@ CXXFLAGS_COMMON+=" -Wconversion"
 CXXFLAGS_COMMON+=" -Wdisabled-optimization"
 CXXFLAGS_COMMON+=" -Werror"
 CXXFLAGS_COMMON+=" -Wno-error=overloaded-virtual"
-CXXFLAGS_COMMON+=" -Wno-error=template-id-cdtor"
+# -Wtemplate-id-cdtor only exists on GCC >= 13; "-Wno-error=template-id-cdtor"
+# is a hard error on the bookworm slave (GCC 12). The plain "-Wno-" form is
+# silently ignored by older GCC and disables the warning on newer GCC, so it
+# works for both the bookworm and trixie passes.
+CXXFLAGS_COMMON+=" -Wno-template-id-cdtor"
 CXXFLAGS_COMMON+=" -Wextra"
 CXXFLAGS_COMMON+=" -Wfloat-equal"
 CXXFLAGS_COMMON+=" -Wformat=2"
